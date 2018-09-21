@@ -15,8 +15,7 @@ def lista_palabras():
 
 def lista_abc(palabras):
     abc = map(sorted, palabras)
-    abc = map(''.join, abc)
-    return abc
+    return map(''.join, abc)
 
 
 def indexar(abc):
@@ -32,7 +31,7 @@ def indexar(abc):
 def extraer(palabras, abc, ind):
     extracto = []
     for i, posicion in enumerate(ind):
-        posicion= posicion-i
+        posicion = posicion - i
         extracto.append(palabras.pop(posicion))
         del abc[posicion]
     return extracto
@@ -41,11 +40,9 @@ def extraer(palabras, abc, ind):
 def anagramas():
     palabras = lista_palabras()
     abc = lista_abc(palabras)
-    anagramas = []
     while len(palabras) > 0:
         ind = indexar(abc)
-        anagramas.extend(extraer(palabras, abc, ind))
-    print anagramas
+        print extraer(palabras, abc, ind)
 
 if __name__ == '__main__':
     anagramas()
