@@ -49,4 +49,5 @@ def anagramas():
         anagramas.extend(extraer(palabras, abc, ind))
     print anagramas
 
-anagramas()
+if __name__ == '__main__':
+    anagramas()
