@@ -14,10 +14,8 @@ def lista_palabras():
 
 
 def lista_abc(palabras):
-    abc = []
-    for palabra in palabras:
-        a = sorted(palabra)
-        abc.append(''.join(a))
+    abc = map(sorted, palabras)
+    abc = map(''.join, abc)
     return abc
 
 
