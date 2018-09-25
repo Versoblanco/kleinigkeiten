@@ -1,48 +1,62 @@
+# encoding=Utf-8
 # given a file containing one word per line, print out all the combinations of words that are anagrams; each line in
 # the output contains all the words from the input that are anagrams of each other.
-# Paso 1: Definir lista de palabras (pte. extraer desde archivo)
-# Paso 2: Ordenar letras de cada palabra en orden alfabetico en lista nueva
-# Paso 3: Indexar palabras iguales
-# Paso 4: Extraer palabras indexadas
-# Paso 5 Repetir pasos 3-4 hasta vaciar lista
-# Paso 6: Presentar lista de anagramas
+# 1. Obtener origen palabras y crear lista ordenada.
+# 2. Crear diccionario vacío
+# 3. Por cada palabra de la lista: 
+#   3.1 Crear anagrama ordenando sus letras en orden alfabético
+#   3.2 Comprobar si el anagrama existe como clave en el diccionario. Si no existe añadir anagrama como nueva clave
+#   3.3 Agregar la palabra original a la lista de valores del lema correspondiente
+# 4. Presentar listas de anagramas, una por línea
 
 
-def lista_palabras():
-    palabras = ["roma",  "mora", "ramo", "concha", "perro", "mira", "amor", "rima"]
+def pedir_nombre_archivo():
+    nombre = raw_input('Enter a file name: ')
+    return nombre
+
+
+def abrir_archivo(nombre):
+    try:
+        archivo = open(nombre)
+        return archivo
+    except:
+        print 'File cannot be open'
+        exit()
+
+    
+def lista_palabras(archivo):
+    palabras = []
+    for line in archivo:
+        line = line.rstrip()
+        palabras.append(line)
     return palabras
 
-
-def lista_abc(palabras):
-    abc = map(sorted, palabras)
-    return map(''.join, abc)
-
-
-def indexar(abc):
-    ind = []
-    for i in range(len(abc)):
-        if abc[i] == abc[0]:
-            ind.append(i)
-        else:
+def crear_diccionario(lista):
+    dicc = dict()
+    for i, palabra in enumerate(lista):
+        anagrama = ''.join(sorted(palabra.lower()))
+        if anagrama not in dicc:
+            dicc[anagrama] = [palabra]
             continue
-    return ind
-
-
-def extraer(palabras, abc, ind):
-    extracto = []
-    for i, posicion in enumerate(ind):
-        posicion = posicion - i
-        extracto.append(palabras.pop(posicion))
-        del abc[posicion]
-    return extracto
+        dicc[anagrama].append(palabra)
+    return dicc
 
 
 def anagramas():
-    palabras = lista_palabras()
-    abc = lista_abc(palabras)
-    while len(palabras) > 0:
-        ind = indexar(abc)
-        print extraer(palabras, abc, ind)
+    #archivo = abrir_archivo(pedir_nombre_archivo())
+    archivo = abrir_archivo('wordlist.txt')
+    palabras = lista_palabras(archivo)
+    archivo.close()
+    diccionario = crear_diccionario(palabras)
+    count = 0
+    for lema in diccionario:
+        anagramas = diccionario.get(lema)
+        if len(anagramas) > 1:
+            print ' - '.join(anagramas)
+        count += 1
+        if count > 2000000:
+            exit()
+
 
 if __name__ == '__main__':
     anagramas()
