@@ -40,15 +40,18 @@ def crear_diccionario_anagramas(palabras):
 
 
 def anagramas():
-    #archivo = abrir_archivo(pedir_nombre_archivo())
     archivo = abrir_archivo('wordlist.txt')
     diccionario = crear_diccionario_anagramas(archivo)
     archivo.close()
+    numero_conjuntos_anagramas = 0
     for clave in diccionario:
         anagramas = diccionario.get(clave)
         if len(anagramas) > 1:
-            print ' - '.join(anagramas)
-    print len(diccionario)
+            numero_conjuntos_anagramas = numero_conjuntos_anagramas + 1
+    if numero_conjuntos_anagramas == 20683:
+        print "ok"
+    else:
+        print "error you got {} instead of 20683".format(numero_conjuntos_anagramas)
 
 
 if __name__ == '__main__':
