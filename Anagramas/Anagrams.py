@@ -1,13 +1,16 @@
 # encoding=Utf-8
-# given a file containing one word per line, print out all the combinations of words that are anagrams; each line in
-# the output contains all the words from the input that are anagrams of each other.
-# 1. Obtener origen palabras y crear lista ordenada.
+# http://codekata.com/kata/kata06-anagrams/
+# Given a file containing one word per line, print out all the combinations of words that are anagrams; each line in the output contains all the words from the input that are anagrams of each other.
+# For added programming pleasure, find the longest words that are anagrams, and find the set of anagrams containing the most words (so “parsley players replays sparely” would not win, having only four words in the set)
+# 1. Obtener palabras de archivo de origen
 # 2. Crear diccionario vacío
-# 3. Por cada palabra de la lista: 
+# 3. Por cada palabra del archivo (1 palabra x línea): 
 #   3.1 Crear anagrama ordenando sus letras en orden alfabético
-#   3.2 Comprobar si el anagrama existe como clave en el diccionario. Si no existe añadir anagrama como nueva clave
-#   3.3 Agregar la palabra original a la lista de valores del lema correspondiente
-# 4. Presentar listas de anagramas, una por línea
+#   3.2 Comprobar si el anagrama ya está en el diccionario, si no existe añadirlo como lema.
+#   3.3 Agregar la palabra a la lista de valores de su lema.
+# 4. Presentar anagramas, una lista por línea, excluyendo las palabras que sólo aparecen una vez.
+
+# PROBLEMAS: Los anagramas se clasifican en minúsculas, pero la lista respeta la ortografía original, duplicación de homógrafos con distinta capitalización.
 
 
 def pedir_nombre_archivo():
@@ -23,18 +26,14 @@ def abrir_archivo(nombre):
         print 'File cannot be open'
         exit()
 
-    
-def lista_palabras(archivo):
-    palabras = []
-    for line in archivo:
-        line = line.rstrip()
-        palabras.append(line)
-    return palabras
 
-def crear_diccionario(lista):
-    dicc = dict()
-    for i, palabra in enumerate(lista):
+def crear_diccionario_anagramas(palabras):
+    dicc = {}
+    for palabra in palabras:
+        palabra = palabra.rstrip()
         anagrama = ''.join(sorted(palabra.lower()))
+        #dicc[anagrama] = dicc.get(anagrama, []) + [palabra]
+        # Algoritmo con estructura condicional es más rápido
         if anagrama not in dicc:
             dicc[anagrama] = [palabra]
             continue
@@ -45,17 +44,13 @@ def crear_diccionario(lista):
 def anagramas():
     #archivo = abrir_archivo(pedir_nombre_archivo())
     archivo = abrir_archivo('wordlist.txt')
-    palabras = lista_palabras(archivo)
+    diccionario = crear_diccionario_anagramas(archivo)
     archivo.close()
-    diccionario = crear_diccionario(palabras)
-    count = 0
-    for lema in diccionario:
-        anagramas = diccionario.get(lema)
+    for clave in diccionario:
+        anagramas = diccionario.get(clave)
         if len(anagramas) > 1:
             print ' - '.join(anagramas)
-        count += 1
-        if count > 2000000:
-            exit()
+    print len(diccionario)
 
 
 if __name__ == '__main__':
