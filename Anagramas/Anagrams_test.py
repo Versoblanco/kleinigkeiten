@@ -3,16 +3,17 @@ import Anagrams
 
 class TestAnagramas(unittest.TestCase):
 
+    def setUp(self):
+        self.anagramador = Anagrams.Anagramador()
+
     def test_resultado(self):
         palabras = open('wordlist.txt')
-        numero_conjuntos_anagramas = len(Anagrams.Anagramador().conjunto_anagramas(palabras))
+        self.assertEqual(len(self.anagramador.conjunto_anagramas(palabras)), 20683)
         palabras.close()
-        
-        self.assertEqual(numero_conjuntos_anagramas, 20683)
 
     def test_obtener_lista_anagramas_de_lista_palabras(self):
         palabras = ['caso', 'coche', 'saco']
-        self.assertEqual([['caso', 'saco']], Anagrams.Anagramador().conjunto_anagramas(palabras))
+        self.assertEqual([['caso', 'saco']], self.anagramador.conjunto_anagramas(palabras))
 
 if __name__ == '__main__':
     unittest.main() 
