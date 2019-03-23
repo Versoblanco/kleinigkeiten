@@ -11,6 +11,8 @@
 # 4. Presentar anagramas, una lista por línea, excluyendo las palabras que sólo aparecen una vez.
 
 # PROBLEMAS: Los anagramas se clasifican en minúsculas, pero la lista respeta la ortografía original, duplicación de homógrafos con distinta capitalización.
+
+
 class Anagramador:
 
     def contar_conjuntos_anagramas(self, palabras):
@@ -42,12 +44,3 @@ class Anagramador:
     def _es_conjunto_anagramas(self, palabras):
         return len(palabras) > 1
 
-
-
-
-
-def contar_conjuntos_anagramas(palabras):
-    return Anagramador().contar_conjuntos_anagramas(palabras)
-
-def conjunto_anagramas(palabras):
-    return Anagramador().conjunto_anagramas(palabras)
