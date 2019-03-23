@@ -13,24 +13,11 @@
 # PROBLEMAS: Los anagramas se clasifican en minúsculas, pero la lista respeta la ortografía original, duplicación de homógrafos con distinta capitalización.
 
 
-def pedir_nombre_archivo():
-    nombre = raw_input('Enter a file name: ')
-    return nombre
-
-
-def abrir_archivo(nombre):
-    try:
-        archivo = open(nombre)
-        return archivo
-    except:
-        print 'File cannot be open'
-        exit()
 
 
 def crear_diccionario_anagramas(palabras):
     dicc = {}
     for palabra in palabras:
-        palabra = palabra.rstrip()
         anagrama = ''.join(sorted(palabra))
         if anagrama not in dicc:
             dicc[anagrama] = [palabra]
@@ -49,15 +36,3 @@ def contar_conjuntos_anagramas(diccionario):
 def es_conjunto_anagramas(palabras):
     return len(palabras) > 1
 
-def anagramas():
-    archivo = abrir_archivo('wordlist.txt')
-    diccionario = crear_diccionario_anagramas(archivo)
-    archivo.close()
-    numero_conjuntos_anagramas = contar_conjuntos_anagramas(diccionario)
-    if numero_conjuntos_anagramas == 20683:
-        print "ok"
-    else:
-        print "error you got {} instead of 20683".format(numero_conjuntos_anagramas)
-
-if __name__ == '__main__':
-    anagramas()

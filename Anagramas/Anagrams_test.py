@@ -4,7 +4,7 @@ import Anagrams
 class TestAnagramas(unittest.TestCase):
 
     def test_resultado(self):
-        archivo = Anagrams.abrir_archivo('wordlist.txt')
+        archivo = open('wordlist.txt')
         diccionario = Anagrams.crear_diccionario_anagramas(archivo)
         archivo.close()
         numero_conjuntos_anagramas = Anagrams.contar_conjuntos_anagramas(diccionario)
