@@ -31,9 +31,7 @@ def crear_diccionario_anagramas(palabras):
     dicc = {}
     for palabra in palabras:
         palabra = palabra.rstrip()
-        anagrama = ''.join(sorted(palabra.lower()))
-        #dicc[anagrama] = dicc.get(anagrama, []) + [palabra]
-        # Algoritmo con estructura condicional es más rápido
+        anagrama = ''.join(sorted(palabra))
         if anagrama not in dicc:
             dicc[anagrama] = [palabra]
             continue
