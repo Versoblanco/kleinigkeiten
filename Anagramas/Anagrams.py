@@ -12,10 +12,16 @@
 
 # PROBLEMAS: Los anagramas se clasifican en minúsculas, pero la lista respeta la ortografía original, duplicación de homógrafos con distinta capitalización.
 
+def contar_conjuntos_anagramas(palabras):
+    diccionario = _crear_diccionario_anagramas(palabras)
+    numero_conjuntos_anagramas = 0
+    for clave in diccionario:
+        palabras = diccionario.get(clave)
+        if _es_conjunto_anagramas(palabras):
+            numero_conjuntos_anagramas = numero_conjuntos_anagramas + 1
+    return numero_conjuntos_anagramas
 
-
-
-def crear_diccionario_anagramas(palabras):
+def _crear_diccionario_anagramas(palabras):
     dicc = {}
     for palabra in palabras:
         anagrama = ''.join(sorted(palabra))
@@ -25,14 +31,6 @@ def crear_diccionario_anagramas(palabras):
         dicc[anagrama].append(palabra)
     return dicc
 
-def contar_conjuntos_anagramas(diccionario):
-    numero_conjuntos_anagramas = 0
-    for clave in diccionario:
-        palabras = diccionario.get(clave)
-        if es_conjunto_anagramas(palabras):
-            numero_conjuntos_anagramas = numero_conjuntos_anagramas + 1
-    return numero_conjuntos_anagramas
-
-def es_conjunto_anagramas(palabras):
+def _es_conjunto_anagramas(palabras):
     return len(palabras) > 1
 
