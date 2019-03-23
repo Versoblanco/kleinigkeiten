@@ -10,5 +10,9 @@ class TestAnagramas(unittest.TestCase):
         
         self.assertEqual(numero_conjuntos_anagramas, 20683)
 
+    def test_obtener_lista_anagramas_de_lista_palabras(self):
+        palabras = ['caso', 'coche', 'saco']
+        self.assertEqual([['caso', 'saco']], Anagrams.conjunto_anagramas(palabras))
+
 if __name__ == '__main__':
     unittest.main() 

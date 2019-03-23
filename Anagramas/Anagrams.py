@@ -34,3 +34,11 @@ def _crear_diccionario_anagramas(palabras):
 def _es_conjunto_anagramas(palabras):
     return len(palabras) > 1
 
+def conjunto_anagramas(palabras):
+    diccionario = _crear_diccionario_anagramas(palabras)
+    conjuntos_anagramas = []
+    for clave in diccionario:
+        palabras = diccionario.get(clave)
+        if _es_conjunto_anagramas(palabras):
+            conjuntos_anagramas.append(palabras)
+    return conjuntos_anagramas
