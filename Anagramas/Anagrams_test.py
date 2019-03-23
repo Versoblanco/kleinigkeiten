@@ -5,7 +5,7 @@ class TestAnagramas(unittest.TestCase):
 
     def test_resultado(self):
         palabras = open('wordlist.txt')
-        numero_conjuntos_anagramas = Anagrams.Anagramador().contar_conjuntos_anagramas(palabras)
+        numero_conjuntos_anagramas = len(Anagrams.Anagramador().conjunto_anagramas(palabras))
         palabras.close()
         
         self.assertEqual(numero_conjuntos_anagramas, 20683)

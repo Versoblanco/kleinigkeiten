@@ -15,9 +15,6 @@
 
 class Anagramador:
 
-    def contar_conjuntos_anagramas(self, palabras):
-        return len(self.conjunto_anagramas(palabras))
-
     def conjunto_anagramas(self, palabras):
         diccionario = self._crear_diccionario_anagramas(palabras)
         conjuntos_anagramas = []
