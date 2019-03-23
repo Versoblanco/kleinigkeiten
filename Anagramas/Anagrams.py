@@ -11,28 +11,43 @@
 # 4. Presentar anagramas, una lista por línea, excluyendo las palabras que sólo aparecen una vez.
 
 # PROBLEMAS: Los anagramas se clasifican en minúsculas, pero la lista respeta la ortografía original, duplicación de homógrafos con distinta capitalización.
+class Anagramador:
+
+    def contar_conjuntos_anagramas(self, palabras):
+        return len(self.conjunto_anagramas(palabras))
+
+    def conjunto_anagramas(self, palabras):
+        diccionario = self._crear_diccionario_anagramas(palabras)
+        conjuntos_anagramas = []
+        for clave in diccionario:
+            palabras = diccionario.get(clave)
+            if self._es_conjunto_anagramas(palabras):
+                conjuntos_anagramas.append(palabras)
+        return conjuntos_anagramas
+
+    #####################
+    # PRIVATE FUNCTIONS #
+    #####################
+
+    def _crear_diccionario_anagramas(self, palabras):
+        dicc = {}
+        for palabra in palabras:
+            anagrama = ''.join(sorted(palabra))
+            if anagrama not in dicc:
+                dicc[anagrama] = [palabra]
+                continue
+            dicc[anagrama].append(palabra)
+        return dicc
+
+    def _es_conjunto_anagramas(self, palabras):
+        return len(palabras) > 1
+
+
+
+
 
 def contar_conjuntos_anagramas(palabras):
-    return len(conjunto_anagramas(palabras))
-
-def _crear_diccionario_anagramas(palabras):
-    dicc = {}
-    for palabra in palabras:
-        anagrama = ''.join(sorted(palabra))
-        if anagrama not in dicc:
-            dicc[anagrama] = [palabra]
-            continue
-        dicc[anagrama].append(palabra)
-    return dicc
-
-def _es_conjunto_anagramas(palabras):
-    return len(palabras) > 1
+    return Anagramador().contar_conjuntos_anagramas(palabras)
 
 def conjunto_anagramas(palabras):
-    diccionario = _crear_diccionario_anagramas(palabras)
-    conjuntos_anagramas = []
-    for clave in diccionario:
-        palabras = diccionario.get(clave)
-        if _es_conjunto_anagramas(palabras):
-            conjuntos_anagramas.append(palabras)
-    return conjuntos_anagramas
+    return Anagramador().conjunto_anagramas(palabras)
