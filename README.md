@@ -25,12 +25,12 @@ If a task grows big enough I move it to their own project.
 
 ### Count
 
-- [ ] Up from a to n
-- [ ] Down from n to 1
+- [ ] Print count from a to n
+- [ ] Print countdown from n to 1
 - [x] [Count function with conditional output](/FizzBuzz.py)
 
 ### Parse
-  - [ ] Reverse a string
+  - [ ] [Reverse a string](/reverse_str.py)
   - [ ] Find
 
 ### Recursion
