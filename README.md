@@ -43,7 +43,8 @@ As their goal is to practice basic skills I looked for my own solutions, that ar
 - [ ] Compute n! (factorial)
 
 ### Math
-- [ ] Check if a is multiple of b
+- [x] [Check if a is multiple of b](/multiple.py)
+- [x] [Find smallest common multiple](/smallest_common_mult.py)
 - [ ] Check if n is prime
 
 ### Hodgepodge
