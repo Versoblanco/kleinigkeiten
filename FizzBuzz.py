@@ -3,15 +3,20 @@
 from multiple import multiple
 
 
-def FizzBuzz():
-    for i in range(1, 101):
+def FizzBuzz(s=1, e=100):
+    nums = list()
+    for i in range(1, e +1):
         if multiple(i, 3) and multiple(i, 5):
-            print "FizzBuzz"
+            nums.append("FizzBuzz")
+        elif multiple(i, 3):
+            nums.append("Fizz")
             continue
-        if multiple(i, 3):
-            print "Fizz"
+        elif multiple(i, 5):
+            nums.append("Buzz")
             continue
-        if multiple(i, 5):
-            print "Buzz"
-            continue
-        print i
+        else:
+            nums.append(i)
+    return nums
+
+
+print FizzBuzz()
