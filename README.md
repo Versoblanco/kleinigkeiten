@@ -46,7 +46,8 @@ As their goal is to learn and/or practice basic skills I looked for my own solut
 ### Math
 - [x] [Check if a is multiple of b](/multiple.py)
 - [x] [Find smallest common multiple](/smallest_common_mult.py)
-- [ ] Check if n is prime
+- [x] [Check if n is prime](/primes.py)
+- [x] [Get a list of primes from a range](/primes.py)
 
 ### Hodgepodge
 
