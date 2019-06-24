@@ -1,4 +1,5 @@
-# Table of contents
+# Small Task
+## Table of contents
 
 - [About](#about)
 - [Functions](#funcions)
@@ -13,9 +14,9 @@
 ## About
 
 *Small Task* is a repository for quick code and texts like:
-1. Easy tasks functions built from scratch, most of which are already performed by built-in functions.
+1. Easy and short solutions built from scratch, most of which are already performed by built-in functions.
 2. Supposedly typical job interview questions.
-3. Small challenges or *katas*.
+3. Small challenges or *katas*. Just for fun.
 4. Patches of code that, for reasons only revealed to a previous me-version, I wanted to keep.
 
 If a task grows big enough I move it to their own project.
@@ -26,7 +27,7 @@ If a task grows big enough I move it to their own project.
 
 - [ ] Up from a to n
 - [ ] Down from n to 1
-- [x] [Up/down performing some task with the numbers that meet n conditions](/FizzBuzz.py)
+- [x] [Count function with conditional output](/FizzBuzz.py)
 
 ### Parse
   - [ ] Reverse a string
@@ -35,7 +36,7 @@ If a task grows big enough I move it to their own project.
 ### Recursion
 - [ ] Fibonacci:
   - [ ] Compute F<sub>n</sub>
-  - [ ] Given F<sub>n</sub>, find n
+  - [ ] Find n of F<sub>n</sub>
 - [ ] Compute n! (factorial)
 
 ### Math
@@ -43,6 +44,7 @@ If a task grows big enough I move it to their own project.
 - [ ] Check if n is prime
 
 ### Hodgepodge
+- [ ] TOC generator for GitHub Markdown
 
 ## License
 
