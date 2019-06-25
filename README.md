@@ -16,21 +16,21 @@
 
 ## About
 
-*Small Task* is a repository for really short programms and texts like:
+*Small Task* is a repository for short programms and texts like:
 1. Quick solutions for simple tasks.
-2. Typical job interview problems, which are usually solved by built-in functions and standard libraries, but they want you to code from scratch.
-3. Mini-challenges or [*katas*](http://codekata.com/). Just for fun.
+2. Elementary versions of built-in and standard functions, coded from scratch.
+3. Small challenges or [*katas*](http://codekata.com/). Just for fun.
 4. Patches of code that, for reasons only revealed to a previous me-version, I want to keep.
 5. New Year's resolutions, in coding terms. If they grow big enough win their own project folder.
 
 ## Functions
-Most of these functions and challenges are presented in many basic programming or computer science courses. I took my list from [here](https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions), and from the classic [MIT 6.001](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/) course book [*Structure and interpretation of computer programms*](https://mitpress.mit.edu/sites/default/files/sicp/index.html) by Abelson, Sussman, and Sussman.
+You'll find most of these in many basic programming or computer science courses. You can see from where I picked mine in the [Bibliography](#bibliography).
 
 As their goal is to learn and/or practice basic skills I looked for my own solutions, that are not always the best, easiest or prettiest ones, though all of them should work in a wide range of cases.
 
 ### Count
-- [x] [Print count from a to n](/count.py)
-- [x] [Print countdown from n to a](/count.py)
+- [x] [Count from a to n](/count.py)
+- [x] [Countdown from n to a](/count.py)
 - [x] [Count function with conditional output](/FizzBuzz.py)
 
 ### Parse
@@ -38,10 +38,10 @@ As their goal is to learn and/or practice basic skills I looked for my own solut
   - [ ] Find
 
 ### Recursion
-- [ ] Fibonacci:
-  - [ ] Compute F<sub>n</sub>
-  - [ ] Find n of F<sub>n</sub>
-- [ ] Compute n! (factorial)
+- [x] [Fibonacci](/fibonacci.py)
+  - [x] Compute F<sub>n</sub>
+  - [x] Find n of F<sub>n</sub>
+- [ ] Compute n!
 
 ### Math
 - [x] [Check if a is multiple of b](/multiple.py)
@@ -52,8 +52,15 @@ As their goal is to learn and/or practice basic skills I looked for my own solut
 ### Hodgepodge
 
 ### Wishful thinking
+> *Who knows, maybe it'll code itself*
 
 - [ ] TOC generator for GitHub Markdown
+
+## Bibliography
+
+- [*Five essential phone screen question*](https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions),
+- Codekata http://codekata.com/
+- [*Structure and interpretation of computer programms*](https://mitpress.mit.edu/sites/default/files/sicp/index.html) by Abelson, Sussman, and Sussman. Course book from the classic [MIT 6.001](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/) Computer Science class.
 
 ## License
 
