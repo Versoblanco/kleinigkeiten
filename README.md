@@ -48,6 +48,7 @@ As their goal is to learn and/or practice basic skills I looked for my own solut
 - [x] [Find smallest common multiple](/smallest_common_mult.py)
 - [x] [Check if n is prime](/primes.py)
 - [x] [Get a list of primes from a range](/primes.py)
+- [x] [Find odds in a range](/odds.py)
 
 ### Hodgepodge
 
