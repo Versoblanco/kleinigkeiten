@@ -1,7 +1,5 @@
 # Kleinigkeiten
 
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
-
 ## Table of contents
 
 <a title="Shaddim [Public domain], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Hello_world_c.svg"><img align = "right" width="512" alt="Hello world c" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Hello_world_c.svg/512px-Hello_world_c.svg.png"></a>
