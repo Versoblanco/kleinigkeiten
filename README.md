@@ -1,4 +1,6 @@
-# Small Task
+# Kleinigkeiten
+
+[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 
 ## Table of contents
 
@@ -9,19 +11,18 @@
   - [Parse](#parse)
   - [Recursion](#recursion)
   - [Math](#math)
-  - [Hodgepodge](#hodgepodge)
-  - [Wishful thinking](#wishful_thinking)
+- [Bibliography](#bibliography)
 - [License](#license)
 
 
 ## About
 
-*Small Task* is a repository for short programms and texts like:
+*Kleinigkeiten* (from German 'little things') is a repository for short programms and coding exercises like:
 1. Quick solutions for simple tasks.
 2. Elementary versions of built-in and standard functions, coded from scratch.
 3. Small challenges or [*katas*](http://codekata.com/). Just for fun.
 4. Patches of code that, for reasons only revealed to a previous me-version, I want to keep.
-5. New Year's resolutions, in coding terms. If they grow big enough win their own project folder.
+5. New Year's coding resolutions.
 
 ## Functions
 You'll find most of these in many basic programming or computer science courses. You can see from where I picked mine in the [Bibliography](#bibliography).
@@ -50,12 +51,6 @@ As their goal is to learn and/or practice basic skills I looked for my own solut
 - [x] [Get a list of primes from a range](/primes.py)
 - [x] [Find odds in a range](/odds.py)
 
-### Hodgepodge
-
-### Wishful thinking
-> *Who knows, maybe it'll code itself*
-
-- [ ] TOC generator for GitHub Markdown
 
 ## Bibliography
 
@@ -65,6 +60,8 @@ As their goal is to learn and/or practice basic skills I looked for my own solut
 
 ## License
 
-Most of this code is so common knowledge that I doubt I could even "own" any of it. Feel free to reuse it in any way you want.
+Most of this code is common knowledge, I doubt I could even "own" any of it. Feel free to reuse it in any way you want.
+
+Documentation (like this README) is shared under a [CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/)
 
 All citations belongs to their authors, its use here fall under what intellectual property laws tag as "fair use" (US) or quotation right (EU).
