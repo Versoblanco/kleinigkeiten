@@ -1,4 +1,7 @@
+*.*~
+*.html
 *.pdf
+*.pyc
 *~
 /.idea
 /venv
